@@ -1,6 +1,6 @@
 local dbConfigs = {}
 
-local groupName = 'GROUPNAME'    -- Enter group name here
+local groupName = 'group5'    -- Enter group name here
 local dbPath = '/home/centos/iuc/centralDB/'..groupName..'/'
 local dbName = 'Channel1.sqlite'
 
@@ -18,6 +18,7 @@ end
 function dbConfigs.retrieve() 
    local conn = dbConfigs.init()
    local envVariable = 'serverType'..groupName
+   --trace(groupName)
    local instance = os.getenv(envVariable)
    local webInfo = conn:query("select * FROM 'webAPI' WHERE Instance='"..instance.."'")
    local webURL = webInfo[1].URL:nodeValue()

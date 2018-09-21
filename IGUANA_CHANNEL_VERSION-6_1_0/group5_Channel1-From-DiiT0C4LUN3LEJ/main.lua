@@ -12,7 +12,7 @@ local webURL,webPage = dbConfigs.retrieve() -- Retrieve the configs stored in ex
 function main()
   
    -- (1) Constuct webAPI complete URL  
-   local webAPIurl = 'http://'..webURL..'/'..webPage
+   local webAPIurl = 'https://'..webURL..'/'..webPage
   
    -- (2) Make API call to retrieve patient data from web API
    local Res,Code,Headers = net.http.get{url=webAPIurl,live=true}
